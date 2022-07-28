@@ -1,1 +1,56 @@
-Hello World-2
+<!-- -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- <meta http-equiv="refresh" content="1"> --> 
+        <!-- -->
+        <title>Singel</title>
+        <link rel="stylesheet" href="code.css" />
+        <script src="code.js"></script>
+        
+
+
+    </head>
+    <body>
+        <div id="query">
+            
+            <button type="button" id="submit" onclick="submitClick()">Create Room</button>
+            <div id="unsupported">
+                Unsupported Features: <br>
+                Playlist URL: <input type="text" id="playlistURL"/><br>
+                Room Code: <input type="text" id="roomCode"><br>
+                <div>
+                    <input type="radio" id="Spotify" name="SpORSc" checked="checked"/>
+                    <label for="Spotify">Spotify</label><br>
+                    <input type="radio" id="Soundcloud" name="SpORSc" />
+                    <label for="Soundcloud">Soundcloud</label><br>
+                </div>
+                Rounds:<input type="text" id="rounds"/><br>
+                <div>
+                    <input type="radio" id="Name" name="GuessChoice" onchange="guessChoice(0)"/>
+                    <label for="Name">Song Name</label><br>
+                    <input type="radio" id="Artist" name="GuessChoice" onchange="guessChoice(1)"/>
+                    <label for="Artist">Artist</label><br>
+                    <input type="radio" id="album" name="GuessChoice" onchange="guessChoice(2)"/>
+                    <label for="album">Album Covers</label><br>
+                    <div id="additionalInfoforGuessChoice"></div>
+                </div>
+            </div>
+        </div>
+        <div id="retry" hidden="true">
+            <button type="button" id="submit" onclick="retryButtonClick()">Replay</button><br>
+            <button type="button" id="submit" onclick="retryButtonClick()">Replay</button><br>
+            <button type="button" id="submit" onclick="retryButtonClick()">Replay</button><br>
+            <button type="button" id="submit" onclick="retryButtonClick()">Replay</button><br>
+            <button type="button" id="submit" onclick="retryButtonClick()">Replay</button><br>
+            <button type="button" id="submit" onclick="retryButtonClick()">Replay</button><br>
+            <button type="button" id="submit" onclick="retryButtonClick()">Replay</button><br>
+        </div>
+        <div id="response"></div>
+
+    </body>
+
+
+
+</html>

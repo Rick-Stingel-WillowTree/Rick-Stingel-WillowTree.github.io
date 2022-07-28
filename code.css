@@ -1,0 +1,21 @@
+#query {
+    border: 1px;
+    border-style: solid;
+    width: min-content;
+    padding: 5px;
+}
+
+#unsupported {
+    border: 1px;
+    border-style: solid;
+    width: min-content;
+    padding: 5px;
+}
+
+#response {
+    border: 1px;
+    border-style: solid;
+    width: min-content;
+    padding: 10px;
+}
+
