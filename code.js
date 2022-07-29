@@ -1,12 +1,8 @@
-
+let serverAdress = "localhost"
+let serverPort = 3000
+let serverURL = "http://" + serverAdress + ":" + serverPort
 
 function submitClick() {
-    let serverAdress = "localhost"
-    let serverPort = 3000
-    let serverURL = "http://" + serverAdress + ":" + serverPort
-    
-    
-    
     let request = new XMLHttpRequest();
 
     request.onreadystatechange = function() {
@@ -23,6 +19,22 @@ function submitClick() {
     
     request.send();
     
+}
+
+function publicLobby(APIRequest){
+    let request = new XMLHttpRequest();
+
+    request.onreadystatechange = function() {
+        if (request.readyState == XMLHttpRequest.DONE){
+            document.getElementById("response").innerHTML = request.responseText;
+            document.getElementById("query").hidden = true;
+            document.getElementById("retry").hidden = false;
+        }
+    }
+    
+    request.open("GET", serverURL + '?spotifyPlaylistID=' + APIRequest);
+    
+    request.send();
 }
 
 
@@ -68,5 +80,5 @@ function pageLoad(){
 }
 
 function joinClick(){
-    
+
 }

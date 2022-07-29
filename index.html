@@ -16,6 +16,15 @@
         <div id="query">
             Playlist URL: <input type="text" id="playlistURL" value=""/><br>
             <button type="button" id="submit" onclick="submitClick()">Create Room</button>
+            <div id=radio>
+                Public Lobbies: <br>
+                <button type="button" id="submit" onclick="publicLobby('37i9dQZF1DXcBWIGoYBM5M?si=ad3b1c8a057e4477')">Today's Top Hits</button>
+                <button type="button" id="submit" onclick="publicLobby('37i9dQZEVXbLRQDuF5jeBp?si=1c2f773dde824b93')">Top 50 - USA</button>
+                <button type="button" id="submit" onclick="publicLobby('3Ho3iO0iJykgEQNbjB2sic?si=ed79cedadb414854')">Clasic Rock 70's 80's 90's</button>
+
+            </div>
+            
+            
             <div id="unsupported">
                 Unsupported Features: <br>
                 
@@ -43,6 +52,8 @@
                     <label for="album">Album Covers</label><br>
                     <div id="additionalInfoforGuessChoice"></div>
                 </div>
+                User ID:<input type="text" id="UID"/><br>
+                <button type="button" id="submit" onclick="">Generate</button>
             </div>
         </div>
         <div id="retry" hidden="true">
