@@ -1,14 +1,15 @@
-#query {
+#query, #retry, #unsupported {
     border: 1px;
+    margin: 1px;
     border-style: solid;
     width: min-content;
     padding: 5px;
 }
 
-#unsupported {
+#radio {
     border: 1px;
+    margin: 1px;
     border-style: solid;
-    width: min-content;
     padding: 5px;
 }
 

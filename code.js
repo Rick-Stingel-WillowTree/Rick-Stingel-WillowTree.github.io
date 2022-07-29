@@ -16,16 +16,10 @@ function submitClick() {
             document.getElementById("retry").hidden = false;
         }
     }
-
     
-    let URL = document.getElementById("playlistURL").value;
+    let APIRequest = formAPIRequest();
     
-    //let APIRequest = formURL();
-
-    //request.addEventListener("load", reqListener);
-    
-    //TODO: change back to APIRequest
-    request.open("GET", serverURL);
+    request.open("GET", serverURL + '?spotifyPlaylistID=' + APIRequest);
     
     request.send();
     
@@ -33,20 +27,20 @@ function submitClick() {
 
 
 
-function  formURL() {
+function  formAPIRequest() {
     let APIRequest = null;
     if (document.getElementById("Spotify").checked == true){
-        APIRequest = "https://open.spotify.com/playlist/";
-        let playlistID = URL.slice(URL.searh("playlist/")+9,URL.length);
+        fullString = document.getElementById("playlistURL").value;
+        let playlistID = fullString.slice(fullString.search("playlist/")+9,fullString.length);
     
-        APIRequest += playlistID + "/tracks";
+        APIRequest = playlistID;
     }
     else
     {
         APIRequest = "api.soundcloud.com";
     }
+    
     return APIRequest;
-
 }
 
 
@@ -66,4 +60,13 @@ function guessChoice(radioButtonChecked) {
     } else {
         document.getElementById("additionalInfoforGuessChoice").innerHTML = "how?";
     }
+}
+
+function pageLoad(){
+    document.getElementById("Name").checked = true;
+    guessChoice("0")
+}
+
+function joinClick(){
+    
 }
