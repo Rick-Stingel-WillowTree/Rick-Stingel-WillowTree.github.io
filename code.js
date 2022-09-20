@@ -10,15 +10,38 @@ function submitClick() {
             document.getElementById("response").innerHTML = request.responseText;
             document.getElementById("query").hidden = true;
             document.getElementById("retry").hidden = false;
+            
         }
     }
     
+    
+    createLobbyCode();
     let APIRequest = formAPIRequest();
     
-    request.open("GET", serverURL + '?spotifyPlaylistID=' + APIRequest);
+    request.open("GET", serverURL + '/spotifyPlaylist?' + APIRequest);
     
     request.send();
     
+}
+
+
+function grabClick(){
+    let request = new XMLHttpRequest();
+
+    request.onreadystatechange = function() {
+        if (request.readyState == XMLHttpRequest.DONE){
+            document.getElementById("response").innerHTML = request.responseText;
+            document.getElementById("query").hidden = true;
+            document.getElementById("retry").hidden = false;
+            
+        }
+    }
+    let APIRequest = formAPIRequest();
+    
+    request.open("GET", serverURL + '/spotifyPlaylist?' + APIRequest + "/tracks");
+
+    request.send();
+
 }
 
 function publicLobby(APIRequest){
@@ -32,7 +55,7 @@ function publicLobby(APIRequest){
         }
     }
     
-    request.open("GET", serverURL + '?spotifyPlaylistID=' + APIRequest);
+    request.open("GET", serverURL + '/spotifyPlaylist?spotifyPlaylistID=' + APIRequest);
     
     request.send();
 }
@@ -41,13 +64,13 @@ function publicLobby(APIRequest){
 
 function  formAPIRequest() {
     let APIRequest = null;
-    if (document.getElementById("Spotify").checked == true){
+    if (document.getElementById("playlistURL").value.includes("spotify")){
         fullString = document.getElementById("playlistURL").value;
         let playlistID = fullString.slice(fullString.search("playlist/")+9,fullString.length);
     
-        APIRequest = playlistID;
+        APIRequest = 'spotifyPlaylistID=' + playlistID;
     }
-    else
+    else if (document.getElementById("playlistURL").value.includes("soundcloud"))
     {
         APIRequest = "api.soundcloud.com";
     }
@@ -79,6 +102,20 @@ function pageLoad(){
     guessChoice("0")
 }
 
-function joinClick(){
+function joinLobbyClick(){
+    return false
+}
 
+function createLobbyCode(){
+    let request = new XMLHttpRequest();
+
+    request.onreadystatechange = function() {
+        if (request.readyState == XMLHttpRequest.DONE){
+            document.getElementById("lobbyCode").innerHTML = request.responseText;
+        }
+    }
+    
+    request.open("GET", serverURL + '/createLobbyCode');
+    
+    request.send();
 }

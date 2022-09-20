@@ -8,41 +8,36 @@
         <title>Singel</title>
         <link rel="stylesheet" href="code.css" />
         <script src="code.js"></script>
-        
-
-
     </head>
     <body onload="pageLoad()">
+        <div id="lobbyCode">0000</div>
         <div id="query">
             Playlist URL: <input type="text" id="playlistURL" value=""/><br>
             <button type="button" id="submit" onclick="submitClick()">Create Room</button>
+            <button type="button" id="submit" onclick="grabClick()">Grab Songs</button>
             <div id=radio>
                 Public Lobbies: <br>
                 <button type="button" id="submit" onclick="publicLobby('37i9dQZF1DXcBWIGoYBM5M?si=ad3b1c8a057e4477')">Today's Top Hits</button>
                 <button type="button" id="submit" onclick="publicLobby('37i9dQZEVXbLRQDuF5jeBp?si=1c2f773dde824b93')">Top 50 - USA</button>
                 <button type="button" id="submit" onclick="publicLobby('3Ho3iO0iJykgEQNbjB2sic?si=ed79cedadb414854')">Clasic Rock 70's 80's 90's</button>
-
             </div>
-            
-            
             <div id="unsupported">
                 Unsupported Features: <br>
                 
                 Room Code: <input type="text" id="roomCode" value=""><br>
-                <button type="button" id="submit" onclick="joinClick()">Join Room</button>
-                <div id="radio">
-                    <input type="radio" id="Private" name="PrivateOrPublic" checked="checked"/>
-                    <label for="Private">Private</label><br>
-                    <input type="radio" id="Public" name="PrivateOrPublic" />
-                    <label for="Public">Public</label><br>
-                </div>
-                <div id="radio">
-                    <input type="radio" id="Spotify" name="SpORSc" checked="checked"/>
-                    <label for="Spotify">Spotify</label><br>
-                    <input type="radio" id="Soundcloud" name="SpORSc" />
-                    <label for="Soundcloud">Soundcloud</label><br>
-                </div>
+                <button type="button" id="submit" onclick="joinLobbyClick()">Join Room</button><br>
+                <!-- 
+                    Steps TODO:
+                    Generate temp server
+                    Delete unused server
+                -->
+
                 Rounds:<input type="text" id="rounds"/><br>
+                <!-- 
+                    Steps TODO:
+                    Must Create Game First!
+                -->
+
                 <div id="radio">
                     <input type="radio" id="Name" name="GuessChoice" checked="checked" onchange="guessChoice(0)"/>
                     <label for="Name">Song Name</label><br>
@@ -52,6 +47,14 @@
                     <label for="album">Album Covers</label><br>
                     <div id="additionalInfoforGuessChoice"></div>
                 </div>
+                <!-- 
+                    Steps TODO:
+                    Grab a list of the  songs instead of songs in HTML
+                    Ability to grab a single song
+                    Grab 
+
+                -->
+
                 User ID:<input type="text" id="UID"/><br>
                 <button type="button" id="submit" onclick="">Generate</button>
             </div>

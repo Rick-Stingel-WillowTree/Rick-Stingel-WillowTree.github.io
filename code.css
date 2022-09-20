@@ -1,6 +1,7 @@
 #query, #retry, #unsupported {
     border: 1px;
     margin: 1px;
+    text-align: center;
     border-style: solid;
     width: min-content;
     padding: 5px;
